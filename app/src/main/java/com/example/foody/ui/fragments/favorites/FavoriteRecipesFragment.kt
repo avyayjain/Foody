@@ -25,7 +25,7 @@ class FavoriteRecipesFragment : Fragment() {
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
         // Inflate the layout for this fragment
         _binding = FragmentFavoriteRecipesBinding.inflate(inflater, container, false)
         binding.lifecycleOwner = this
@@ -45,7 +45,7 @@ class FavoriteRecipesFragment : Fragment() {
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         if(item.itemId == R.id.deleteAll_favorite_recipes_menu){
-            mainViewModel.deleteAllFavouriteRecipes()
+            mainViewModel.deleteAllFavoriteRecipes()
             showSnackBar()
         }
         return super.onOptionsItemSelected(item)
@@ -65,8 +65,8 @@ class FavoriteRecipesFragment : Fragment() {
             .show()
     }
 
-    override fun onDestroy() {
-        super.onDestroy()
+    override fun onDestroyView() {
+        super.onDestroyView()
         _binding = null
         mAdapter.clearContextualActionMode()
     }

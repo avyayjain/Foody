@@ -38,11 +38,13 @@
     <dialog
         android:id="@+id/recipesBottomSheet"
         android:name="com.example.foody.ui.fragments.recipes.bottomsheet.RecipesBottomSheet"
-        android:label="recipes bottom sheet"
+        android:label="recipes_bottom_sheet"
         tools:layout="@layout/recipes_bottom_sheet" >
         <action
             android:id="@+id/action_recipesBottomSheet_to_recipesFragment"
-            app:destination="@id/recipesFragment" />
+            app:destination="@id/recipesFragment"
+            app:popUpTo="@id/recipesFragment"
+            app:popUpToInclusive="true" />
     </dialog>
     <activity
         android:id="@+id/detailsActivity"

@@ -8,13 +8,12 @@
            name="mainViewModel"
            type="com.example.foody.viewmodels.MainViewModel" />
 
-
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@color/lightGray"
+        android:background="@color/backgroundColor"
         tools:context=".ui.fragments.recipes.RecipesFragment">
 
         <com.todkars.shimmer.ShimmerRecyclerView
@@ -50,7 +49,7 @@
             android:layout_width="100dp"
             android:layout_height="100dp"
             readApiResponse="@{mainViewModel.recipesResponse}"
-            readDatabase="@{mainViewModel.readRecipe}"
+            readDatabase="@{mainViewModel.readRecipes}"
             android:alpha="0.5"
             android:src="@drawable/ic_sad"
             android:visibility="invisible"
@@ -64,11 +63,11 @@
             android:id="@+id/error_textView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            readApiResponse2="@{mainViewModel.recipesResponse}"
-            readDatabase2="@{mainViewModel.readRecipe}"
+            readApiResponse="@{mainViewModel.recipesResponse}"
+            readDatabase="@{mainViewModel.readRecipes}"
             android:layout_marginTop="8dp"
             android:alpha="0.5"
-            android:text="No Internet Connection."
+            android:text="@string/no_internet_connection"
             android:textSize="18sp"
             android:textStyle="bold"
             android:visibility="invisible"
