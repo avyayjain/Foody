@@ -18,17 +18,17 @@ class RecipesRowBinding {
 
     companion object {
 
-        @BindingAdapter("onRecipesClickListener")
+        @BindingAdapter("onRecipeClickListener")
         @JvmStatic
-        fun onRecipesClickListener(recipesRowLayout: ConstraintLayout,result: Result){
-
-            recipesRowLayout.setOnClickListener {
+        fun onRecipeClickListener(recipeRowLayout: ConstraintLayout, result: Result) {
+            Log.d("onRecipeClickListener", "CALLED")
+            recipeRowLayout.setOnClickListener {
                 try {
                     val action =
                         RecipesFragmentDirections.actionRecipesFragmentToDetailsActivity(result)
-                    recipesRowLayout.findNavController().navigate(action)
-                }catch (e : Exception){
-                    Log.d("onRecipesClickListener",e.toString())
+                    recipeRowLayout.findNavController().navigate(action)
+                } catch (e: Exception) {
+                    Log.d("onRecipeClickListener", e.toString())
                 }
             }
         }
@@ -42,13 +42,11 @@ class RecipesRowBinding {
             }
         }
 
-
-
         @BindingAdapter("applyVeganColor")
         @JvmStatic
         fun applyVeganColor(view: View, vegan: Boolean) {
-            if(vegan){
-                when(view){
+            if (vegan) {
+                when (view) {
                     is TextView -> {
                         view.setTextColor(
                             ContextCompat.getColor(
@@ -72,7 +70,7 @@ class RecipesRowBinding {
         @BindingAdapter("parseHtml")
         @JvmStatic
         fun parseHtml(textView: TextView, description: String?){
-            if (description!=null){
+            if(description != null) {
                 val desc = Jsoup.parse(description).text()
                 textView.text = desc
             }

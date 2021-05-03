@@ -9,14 +9,14 @@ class PagerAdapter(
     private val resultBundle: Bundle,
     private val fragments: ArrayList<Fragment>,
     fragmentActivity: FragmentActivity
-): FragmentStateAdapter(fragmentActivity){
+) : FragmentStateAdapter(fragmentActivity) {
 
     override fun getItemCount(): Int {
         return fragments.size
     }
 
     override fun createFragment(position: Int): Fragment {
-        fragments[position].arguments= resultBundle
+        fragments[position].arguments = resultBundle
         return fragments[position]
     }
 }

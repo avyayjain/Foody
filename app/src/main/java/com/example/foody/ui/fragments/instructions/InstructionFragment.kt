@@ -10,7 +10,7 @@ import com.example.foody.databinding.FragmentInstructionBinding
 import com.example.foody.models.Result
 import com.example.foody.util.Constants
 
-class InstructionFragment : Fragment() {
+class InstructionsFragment : Fragment() {
 
     private var _binding: FragmentInstructionBinding? = null
     private val binding get() = _binding!!
@@ -20,7 +20,7 @@ class InstructionFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View {
         // Inflate the layout for this fragment
-        _binding =  FragmentInstructionBinding.inflate(inflater, container, false)
+        _binding = FragmentInstructionBinding.inflate(inflater, container, false)
 
         val args = arguments
         val myBundle: Result? = args?.getParcelable(Constants.RECIPE_RESULT_KEY)
@@ -35,6 +35,5 @@ class InstructionFragment : Fragment() {
     override fun onDestroyView() {
         super.onDestroyView()
         _binding = null
-
     }
 }

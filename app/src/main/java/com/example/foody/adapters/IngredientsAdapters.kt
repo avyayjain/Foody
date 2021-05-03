@@ -11,19 +11,18 @@ import com.example.foody.models.ExtendedIngredient
 import com.example.foody.util.Constants.Companion.BASE_IMAGE_URL
 import com.example.foody.util.RecipesDiffUtil
 
-class IngredientsAdapters: RecyclerView.Adapter<IngredientsAdapters.MyViewHolder>(){
+class IngredientsAdapter: RecyclerView.Adapter<IngredientsAdapter.MyViewHolder>() {
 
     private var ingredientsList = emptyList<ExtendedIngredient>()
 
     class MyViewHolder(val binding: IngredientsRowLayoutBinding): RecyclerView.ViewHolder(binding.root)
 
-
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MyViewHolder {
-        return MyViewHolder(IngredientsRowLayoutBinding.inflate(LayoutInflater.from(parent.context),parent,false))
+        return MyViewHolder(IngredientsRowLayoutBinding.inflate(LayoutInflater.from(parent.context), parent, false))
     }
 
     override fun onBindViewHolder(holder: MyViewHolder, position: Int) {
-        holder.binding.ingredientImageView.load(BASE_IMAGE_URL+ ingredientsList[position].image){
+        holder.binding.ingredientImageView.load(BASE_IMAGE_URL + ingredientsList[position].image) {
             crossfade(600)
             error(R.drawable.ic_error_placeholder)
         }
@@ -38,11 +37,12 @@ class IngredientsAdapters: RecyclerView.Adapter<IngredientsAdapters.MyViewHolder
         return ingredientsList.size
     }
 
-    fun setData(newIngredients: List<ExtendedIngredient>){
-        val ingredientsDiffUtil = RecipesDiffUtil(ingredientsList, newIngredients)
-
+    fun setData(newIngredients: List<ExtendedIngredient>) {
+        val ingredientsDiffUtil =
+            RecipesDiffUtil(ingredientsList, newIngredients)
         val diffUtilResult = DiffUtil.calculateDiff(ingredientsDiffUtil)
         ingredientsList = newIngredients
         diffUtilResult.dispatchUpdatesTo(this)
     }
+
 }

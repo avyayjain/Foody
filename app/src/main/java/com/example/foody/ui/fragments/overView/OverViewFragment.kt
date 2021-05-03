@@ -30,7 +30,7 @@ class OverViewFragment : Fragment() {
 
         binding.mainImageView.load(myBundle?.image)
         binding.titleTextView.text = myBundle?.title
-        binding.likeTextView.text = myBundle?.aggregateLikes.toString()
+        binding.likesTextView.text = myBundle?.aggregateLikes.toString()
         binding.timeTextView.text = myBundle?.readyInMinutes.toString()
         binding.summaryTextView.text = myBundle?.summary
         myBundle?.summary.let {

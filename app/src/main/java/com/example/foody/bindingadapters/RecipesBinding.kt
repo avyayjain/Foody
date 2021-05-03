@@ -1,5 +1,6 @@
 package com.example.foody.bindingadapters
 
+
 import android.view.View
 import android.widget.ImageView
 import android.widget.TextView

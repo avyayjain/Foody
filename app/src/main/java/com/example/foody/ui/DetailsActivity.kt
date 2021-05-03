@@ -14,7 +14,7 @@ import com.example.foody.adapters.PagerAdapter
 import com.example.foody.data.database.entities.FavoritesEntity
 import com.example.foody.databinding.ActivityDetailsBinding
 import com.example.foody.ui.fragments.ingredients.IngredientsFragment
-import com.example.foody.ui.fragments.instructions.InstructionFragment
+import com.example.foody.ui.fragments.instructions.InstructionsFragment
 import com.example.foody.ui.fragments.overView.OverViewFragment
 import com.example.foody.util.Constants.Companion.RECIPE_RESULT_KEY
 import com.example.foody.viewmodels.MainViewModel
@@ -47,7 +47,7 @@ class DetailsActivity : AppCompatActivity() {
         val fragments = ArrayList<Fragment>()
         fragments.add(OverViewFragment())
         fragments.add(IngredientsFragment())
-        fragments.add(InstructionFragment())
+        fragments.add(InstructionsFragment())
 
         val titles = ArrayList<String>()
         titles.add("Overview")

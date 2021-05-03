@@ -1,5 +1,4 @@
 package com.example.foody.ui.fragments.recipes.bottomsheet
-
 import android.os.Bundle
 import android.util.Log
 import android.view.LayoutInflater
@@ -19,10 +18,10 @@ import java.util.*
 
 class RecipesBottomSheet : BottomSheetDialogFragment() {
 
+    private lateinit var recipesViewModel: RecipesViewModel
+
     private var _binding: RecipesBottomSheetBinding? = null
     private val binding get() = _binding!!
-
-    private lateinit var recipesViewModel: RecipesViewModel
 
     private var mealTypeChip = DEFAULT_MEAL_TYPE
     private var mealTypeChipId = 0
@@ -91,5 +90,4 @@ class RecipesBottomSheet : BottomSheetDialogFragment() {
         super.onDestroyView()
         _binding = null
     }
-
 }

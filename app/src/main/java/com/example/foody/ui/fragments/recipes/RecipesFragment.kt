@@ -37,7 +37,7 @@ class RecipesFragment : Fragment(), SearchView.OnQueryTextListener {
     private lateinit var recipesViewModel: RecipesViewModel
     private val mAdapter by lazy { RecipesAdapter() }
 
-    private lateinit var networkListener : NetworkListener
+    private lateinit var networkListener: NetworkListener
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
